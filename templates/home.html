@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+{% for listing in listings %}
+
+<div class="mt-2 px-3 py-2 bg-gray-100 rounded-sm">
+    <h3 class="text-3xl text-gray-900">{{ listing.name }}</h3>
+    <img src="{{ listing.image.url }}" alt="" />
+    <p><a href="{% url 'retrieve' listing.pk %}" class="text-blue-500">
+        READ MORE
+    </a></p>
+    <p><a href="{% url 'contact' %}" class='text-blue-500'>Contact us</a> for inquiries</p>
+</div>
+
+{% endfor %}
+
+{% endblock content %}
